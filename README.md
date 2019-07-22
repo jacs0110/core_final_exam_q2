@@ -1,4 +1,4 @@
-## Q1: 實作 Middleware
+## Q2: 實作 Middleware
 
 ### Get Started
 #### 0. Prerequisites/Environment
@@ -8,7 +8,7 @@
     
 #### 1. Clone this app
 ```
-$ git clone https://github.com/jacs0110/core_final_exam_q1.git
+$ git clone https://github.com/jacs0110/core_final_exam_q2.git
 ```
 
 #### 2. Install npm packages
