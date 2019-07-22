@@ -7,8 +7,14 @@ app.use((req, res, next) => {
   let nowDate = new Date()
   let date = nowDate.toISOString().slice(0, 10)
   let time = nowDate.toISOString().slice(11, 19)
-  console.log(`${date} ${time} | ${req.method} ${req.url}`)
-  return next()
+  let message = `${date} ${time} | ${req.method} ${req.url}`
+  res.locals = { time: nowDate, message: message }
+
+  res.on('finish', () => {
+    let dataSet = res.locals
+    console.log(`${dataSet.message} | total time: ${(new Date() - dataSet.time)}ms`)
+  })
+  next()
 })
 
 // 列出全部 Todo
