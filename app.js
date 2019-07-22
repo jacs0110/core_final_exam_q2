@@ -2,8 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-
-// app.js 裡的 middleware
+// middleware
 app.use((req, res, next) => {
   let nowDate = new Date()
   let date = nowDate.toISOString().slice(0, 10)
@@ -11,7 +10,6 @@ app.use((req, res, next) => {
   console.log(`${date} ${time} | ${req.method} ${req.url}`)
   return next()
 })
-
 
 // 列出全部 Todo
 app.get('/', (req, res) => {
